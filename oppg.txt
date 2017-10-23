@@ -1,0 +1,42 @@
+##
+
+Variabelbeskrivelse
+
+Rammeverket oppretter en nodeklasse med folgende egenskaper: barn - en liste over alle
+nodebarna til noden (noder direkte underlagt noden du staar i) ratatosk -
+en boolsk variabel som er True om ratatosk finnes i noden nesteBarn - en variabel
+du kan sette til neste nodebarn naar du bruker dybde-forst-ok
+
+Du skal implementere dybde- og bredde-først-søk (DFS og BFS) for å finne Ratatosk, som finnes
+ i akkurat én av nodene i et tre. Du kan lese om DFS på side 604 og BFS på side 595 i Cormen.
+ Nedenfor ser du et rammeverk for innlesing av data, og en klasse Node som brukes til å holde
+ styr på treet. En Node har en attributt barn som er en liste med referanser til alle barna.
+
+Du skal lage to funksjoner dfs og bfs som begge tar inn en rotnode som parameter, traverserer
+treet og returnerer dybden på noden Ratatosk befinner seg i. Rotnoden er på dybde 0. DFS kan enten
+ implementeres ved hjelp av en stakk eller med rekursjon, men i denne øvingen skal du bruke en
+ stakk. Dette er ikke forklart direkte i læreboken, men det står om DFS på side 605. BFS
+ implementeres ved hjelp av en kø (Cormen side 595).
+
+Input består av følgende linjer:
+
+Hvilken funksjon som skal brukes, 'dfs', 'bfs' eller 'velg'. Dersom første linje inneholder
+verdien 'velg', kan du finne Ratatosk på den måten du vil. Ellers skal du kalle tilsvarende
+funksjon, for å sjekke at den fungerer. (På tidstestene vil input alltid være 'velg'.)
+Antall noder i treet.
+Hvilken node som er rot-noden i treet.
+Hvilken node Ratatosk befinner seg i (0-indeksert).
+Resten av linjene inneholder først et nodenummer (0-indeksert) og så en liste med nummerne
+til barna til nodene, alt separert med mellomrom. Hvis det er n noder i treet,
+vil alle nodene ha et nummer fra og med 0 opp til n, men ikke nødvendigvis i rekkefølge.
+
+Det oppgis at det er like stor sannsynlighet for at ratatosk befinner seg på alle nivåer,
+ og dermed ikke like stor sannsynlighet for at han befinner seg i alle noder.
+
+I eksempelet under er det 10 noder. Node 0 har barna 1, 2 og 3. Rotnoten er node 0 og
+ Ratatosk befinner seg i node 7.
+
+PS: Det er en sterk relasjon mellom lenkede lister, trær og grafer. Et tre er et spesialtilfelle
+ av en graf, og en lenket liste er et spesialtilfelle av et tre. DFS og BFS er generelle
+ graftraverseringsalgoritmer. Hvis du modifiserer funksjonene dine til å merke hvilke noder de
+ allerede har besøkt, fungerer de på generelle grafer.
