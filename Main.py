@@ -40,7 +40,7 @@ def dfs_b(root):
     level = 1
     while(nodes_to_visit):
         currentnode = nodes_to_visit.pop()
-        if currentnode.ratatosk: # alle løvene i treet
+        if currentnode.ratatosk: 
             return currentnode.level
         for child in currentnode.children:
             if child.visited==0:
@@ -61,12 +61,11 @@ def bfs(root):
                 child.visited = 1
                 if child.ratatosk:
                     return child.level
-                nodes_to_visit.insert(0, child)  # De med høyest level ligger bakerst
+                nodes_to_visit.insert(0, child) 
         currentnode.visited = 2
     return None
 
 
-# MASSE INISIALISERIG
 
 
 funksjon = stdin.readline().strip()
@@ -82,7 +81,6 @@ for line in stdin:
     temp_node = nodes[int(number.pop(0))]
     for child_number in number:
         temp_node.children.append(nodes[int(child_number)])
-# MASSE INISIALISERIG
 
 if funksjon == 'dfs':
     print(dfs_b(start_node))
